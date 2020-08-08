@@ -32,17 +32,31 @@
      */
     var OBJLoader = new THREE.OBJLoader();//obj加载器
     var MTLLoader = new THREE.MTLLoader();//材质文件加载器
-    MTLLoader.load('./立方体/box.mtl', function(materials) {
-      // 返回一个包含材质的对象MaterialCreator
-      console.log(materials);
-      //obj的模型会和MaterialCreator包含的材质对应起来
-      OBJLoader.setMaterials(materials);
-      OBJLoader.load('./立方体/box.obj', function(obj) {
-        console.log(obj);
-        obj.scale.set(10, 10, 10); //放大obj组对象
-        scene.add(obj);//返回的组对象插入场景中
-      })
-    })
+    // MTLLoader.load('./立方体/box.mtl', function(materials) {
+    //   // 返回一个包含材质的对象MaterialCreator
+    //   console.log(materials);
+    //   //obj的模型会和MaterialCreator包含的材质对应起来
+    //   OBJLoader.setMaterials(materials);
+    //   OBJLoader.load('./立方体/box.obj', function(obj) {
+    //     console.log(obj);
+    //     obj.scale.set(10, 10, 10); //放大obj组对象
+    //     scene.add(obj);//返回的组对象插入场景中
+    //   })
+    // })
+	
+	// MTLLoader.load('./贴图/bangjing2.mtl', function(materials) {
+	MTLLoader.load('./贴图/material.mtl', function(materials) {
+	  // 返回一个包含材质的对象MaterialCreator
+	  console.log(materials);
+	  //obj的模型会和MaterialCreator包含的材质对应起来
+	  OBJLoader.setMaterials(materials);
+	  // OBJLoader.load('./贴图/bangjing2.obj', function(obj) {
+	  OBJLoader.load('./贴图/model.obj', function(obj) {
+	    console.log(obj);
+	    obj.scale.set(10, 10, 10); //放大obj组对象
+	    scene.add(obj);//返回的组对象插入场景中
+	  })
+	})
 
     /**
      * 光源设置

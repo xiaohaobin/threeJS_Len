@@ -28,6 +28,8 @@
      */
     var loader = new THREE.BufferGeometryLoader();
     loader.load('bufferGeometry.json',function (geometry) {
+	// loader.load('untitled2.json',function (geometry) {
+	// loader.load('xiaoji.json',function (geometry) {
       // 控制台查看加载放回的threejs对象结构
       console.log(geometry);
       var material = new THREE.MeshLambertMaterial({

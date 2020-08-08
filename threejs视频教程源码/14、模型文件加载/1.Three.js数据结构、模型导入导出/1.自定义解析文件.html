@@ -34,6 +34,7 @@
     // 创建一个文件加载器，该加载器是对异步加载的封装
     var loader = new THREE.FileLoader();
     loader.load('material.json', function(elem) {
+	// loader.load('demo.json', function(elem) {
       console.log(elem);// 查看加载返回的内容
       var obj = JSON.parse(elem);// 字符串转JSON对象
       console.log(obj);// 查看转化结果
@@ -41,8 +42,10 @@
       /**
        * 解析材质数据
        */
+	  console.log(obj,"obj");
       // 根据type的值判断调用threejs的哪一个API
-      var material = new typeAPI[obj.type]();
+      // var material = new typeAPI[obj.type]();
+	  var material = new typeAPI["MeshLambertMaterial"]();
       // 从obj.color中提取颜色
       // 16711935对应颜色0xFF00FF  255对应颜色0x0000FF
       material.color.r = (obj.color >> 16 & 255) / 255; //获取颜色值R部分

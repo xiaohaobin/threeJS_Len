@@ -30,7 +30,8 @@
     var scene = new THREE.Scene();
     var mixer=null;//声明一个混合器变量
     var loader = new THREE.FBXLoader();//创建一个FBX加载器
-    loader.load("SambaDancing.fbx", function(obj) {
+    loader.load("shamoshiren2.FBX", function(obj) {
+	// loader.load("45.fbx", function(obj) {
       // console.log(obj)
       scene.add(obj)
       obj.translateY(-80);
